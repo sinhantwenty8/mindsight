@@ -1,0 +1,255 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net7.0-android;net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
+		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
+		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
+		<OutputType>Exe</OutputType>
+		<RootNamespace>MindSight</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<!-- Display name -->
+		<ApplicationTitle>MindSight</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.companyname.mindsight</ApplicationId>
+		<ApplicationIdGuid>8e231ec4-d073-4464-9645-b931235a775a</ApplicationIdGuid>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	</PropertyGroup>
+	<ItemGroup>
+	  <MauiImage Remove="Resources\Images\article1.png" />
+	  <MauiImage Remove="Resources\Images\support3.png" />
+	  <MauiImage Remove="Resources\Images\mindsighticon.png" />
+	  <MauiImage Remove="Resources\Images\support2.png" />
+	  <MauiImage Remove="Resources\Images\support1.png" />
+	  <MauiImage Remove="Resources\Images\support3.png" />
+	  <MauiImage Remove="Resources\Images\mindsighticon.png" />
+	  <MauiImage Remove="Resources\Images\support2.png" />
+	  <MauiImage Remove="Resources\Images\support1.png" />
+	  <MauiImage Remove="Resources\Images\audio.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+
+		<!-- Splash Screen (Changed) -->
+		<MauiSplashScreen Include="Resources\Images\mindsightsplash.png" Color="#DDEAF1" BaseSize="128,128" />
+
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+		<PackageReference Include="Syncfusion.Maui.Calendar" Version="21.1.39" />
+		<PackageReference Include="SQLite" Version="3.13.0" />
+		<PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+		<PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.4" />
+		<PackageReference Include="Plugin.Maui.Audio" Version="1.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <BundleResource Include="Resources\Images\insights_icon.png" />
+	  <BundleResource Include="Resources\Images\insights_icon.png" />
+	  <BundleResource Include="Resources\Images\journal_icon.png" />
+	  <BundleResource Include="Resources\Images\close_icon.png" />
+	  <BundleResource Include="Resources\Images\bookmark.png" />
+	  <BundleResource Include="Resources\Images\article2.png" />
+	  <BundleResource Include="Resources\Images\article3.png" />
+	  <BundleResource Include="Resources\Images\article4.png" />
+	  <BundleResource Include="Resources\Images\search_icon.png" />
+	  <BundleResource Include="Resources\Images\article1.png" />
+	  <BundleResource Include="Resources\Images\article5.png" />
+	  <BundleResource Include="Resources\Images\article6.png" />
+	  <BundleResource Include="Resources\Images\article7.png" />
+	  <BundleResource Include="Resources\Images\article8.png" />
+	  <BundleResource Include="Resources\Images\article9.png" />
+	  <BundleResource Include="Resources\Images\article10.png" />
+	  <BundleResource Include="Resources\Images\article11.png" />
+	  <BundleResource Include="Resources\Images\article12.png" />
+	  <BundleResource Include="Resources\Images\article13.png" />
+	  <BundleResource Include="Resources\Images\article15.png" />
+	  <BundleResource Include="Resources\Images\article16.png" />
+	  <BundleResource Include="Resources\Images\article14.png" />
+	  <BundleResource Include="Resources\Images\bookmark_outline.png" />
+	  <BundleResource Include="Resources\Images\f1.png" />
+	  <BundleResource Include="Resources\Images\f1.png" />
+	  <BundleResource Include="Resources\Images\f2.png" />
+	  <BundleResource Include="Resources\Images\f2.png" />
+	  <BundleResource Include="Resources\Images\f3.png" />
+	  <BundleResource Include="Resources\Images\f3.png" />
+	  <BundleResource Include="Resources\Images\f4.png" />
+	  <BundleResource Include="Resources\Images\f4.png" />
+	  <BundleResource Include="Resources\Images\f5.png" />
+	  <BundleResource Include="Resources\Images\f5.png" />
+	  <BundleResource Include="Resources\Images\f6.png" />
+	  <BundleResource Include="Resources\Images\f6.png" />
+	  <BundleResource Include="Resources\Images\f7.png" />
+	  <BundleResource Include="Resources\Images\f7.png" />
+	  <BundleResource Include="Resources\Images\filter.png" />
+	  <BundleResource Include="Resources\Images\filter.png" />
+	  <BundleResource Include="Resources\Images\f1.png" />
+	  <BundleResource Include="Resources\Images\f2.png" />
+	  <BundleResource Include="Resources\Images\f3.png" />
+	  <BundleResource Include="Resources\Images\f4.png" />
+	  <BundleResource Include="Resources\Images\f5.png" />
+	  <BundleResource Include="Resources\Images\f6.png" />
+	  <BundleResource Include="Resources\Images\f7.png" />
+	  <BundleResource Include="Resources\Images\filter.png" />
+	  <BundleResource Include="Resources\Images\journal_record.png" />
+	  <BundleResource Include="Resources\Images\lb_box.png" />
+	  <BundleResource Include="Resources\Images\profile.png" />
+	  <BundleResource Include="Resources\Images\support.png" />
+	  <BundleResource Include="Resources\Images\talk_us.png" />
+	  <BundleResource Include="Resources\Images\welcome_user.png" />
+	  <BundleResource Include="Resources\Images\edit_icon.png" />
+	  <BundleResource Include="Resources\Images\icon_4.png" />
+	  <BundleResource Include="Resources\Images\icon_6.png" />
+	  <BundleResource Include="Resources\Images\icon_7.png" />
+	  <BundleResource Include="Resources\Images\icon_8.png" />
+	  <BundleResource Include="Resources\Images\icon_10.png" />
+	  <BundleResource Include="Resources\Images\icon_2.png" />
+	  <BundleResource Include="Resources\Images\icon_3.png" />
+	  <BundleResource Include="Resources\Images\icon_9.png" />
+	  <BundleResource Include="Resources\Images\icon_1.png" />
+	  <BundleResource Include="Resources\Images\icon_5.png" />
+	  <BundleResource Include="Resources\Images\edit_icon_filled.png" />
+	  <BundleResource Include="Resources\Images\add_icon.png" />
+	  <BundleResource Include="Resources\Images\back_arrow.png" />
+	  <BundleResource Include="Resources\Images\goal_icon.png" />
+	  <BundleResource Include="Resources\Images\f1_new.png" />
+	  <BundleResource Include="Resources\Images\f2_new.png" />
+	  <BundleResource Include="Resources\Images\f3_new.png" />
+	  <BundleResource Include="Resources\Images\f4_new.png" />
+	  <BundleResource Include="Resources\Images\f5_new.png" />
+	  <BundleResource Include="Resources\Images\f6_new.png" />
+	  <BundleResource Include="Resources\Images\f7_new.png" />
+	  <BundleResource Include="Resources\Images\remove_icon.png" />
+	  <BundleResource Include="Resources\Images\mindsightsplash.png" />
+	  <BundleResource Include="Resources\Images\mindsighticon.png" />
+	  <BundleResource Include="Resources\Images\support1.png" />
+	  <BundleResource Include="Resources\Images\support2.png" />
+	  <BundleResource Include="Resources\Images\support3.png" />
+	  <BundleResource Include="Resources\Images\support3.png" />
+	  <BundleResource Include="Resources\Images\mindsighticon.png" />
+	  <BundleResource Include="Resources\Images\support2.png" />
+	  <BundleResource Include="Resources\Images\support1.png" />
+	  <BundleResource Include="Resources\Images\support3.png" />
+	  <BundleResource Include="Resources\Images\mindsighticon.png" />
+	  <BundleResource Include="Resources\Images\support2.png" />
+	  <BundleResource Include="Resources\Images\support1.png" />
+	  <BundleResource Include="Resources\Raw\MindsightAudio.wav" />
+	  <BundleResource Include="Resources\Images\audio.png" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="Resources\Images\insights_icon.png" />
+	  <None Remove="Resources\Images\journal_icon.png" />
+	  <None Remove="Views\" />
+	  <None Remove="Resources\Images\close.png" />
+	  <None Remove="Resources\Images\filter-filled-tool-symbol.png" />
+	  <None Remove="Resources\Images\icons8-funnel-50.png" />
+	  <None Remove="Resources\Images\empty-filter.png" />
+	  <None Remove="Resources\Images\bookmark.png" />
+	  <None Remove="Resources\Images\Screenshot 2023-02-17 at 3.34.31 PM.png" />
+	  <None Remove="Resources\Images\Screenshot 2023-02-17 at 3.40.53 PM.png" />
+	  <None Remove="Resources\Images\Screenshot 2023-02-17 at 3.43.21 PM.png" />
+	  <None Remove="Resources\Images\Screenshot 2023-02-17 at 4.07.38 PM.png" />
+	  <None Remove="Data\" />
+	  <None Remove="Resources\Images\Screenshot 2023-02-24 at 11.25.32 AM.png" />
+	  <None Remove="Resources\Images\icons8-search-more-32.png" />
+	  <None Remove="Resources\Images\Screenshot 2023-02-24 at 3.19.21 PM.png" />
+	  <None Remove="Resources\Images\article1.png" />
+	  <None Remove="Resources\Images\Screenshot 2023-02-24 at 5.41.13 PM.png" />
+	  <None Remove="Resources\Images\Screenshot 2023-02-24 at 5.41.45 PM.png" />
+	  <None Remove="Resources\Images\Screenshot 2023-02-24 at 5.41.52 PM.png" />
+	  <None Remove="Resources\Images\Screenshot 2023-02-24 at 5.41.58 PM.png" />
+	  <None Remove="Resources\Images\Screenshot 2023-02-24 at 5.42.09 PM.png" />
+	  <None Remove="Resources\Images\Screenshot 2023-02-24 at 5.42.22 PM.png" />
+	  <None Remove="Resources\Images\Screenshot 2023-02-24 at 5.42.29 PM.png" />
+	  <None Remove="Resources\Images\Screenshot 2023-02-24 at 5.42.36 PM.png" />
+	  <None Remove="Resources\Images\Screenshot 2023-02-24 at 5.42.54 PM.png" />
+	  <None Remove="Resources\Images\Screenshot 2023-02-24 at 5.43.02 PM.png" />
+	  <None Remove="Resources\Images\Screenshot 2023-02-24 at 5.43.07 PM.png" />
+	  <None Remove="Resources\Images\Screenshot 2023-02-24 at 5.58.16 PM.png" />
+	  <None Remove="Resources\Images\icons8-bookmark-outline-24.png" />
+	  <None Remove="Resources\Images\f1.png" />
+	  <None Remove="Resources\Images\f2.png" />
+	  <None Remove="Resources\Images\f3.png" />
+	  <None Remove="Resources\Images\f4.png" />
+	  <None Remove="Resources\Images\f5.png" />
+	  <None Remove="Resources\Images\f6.png" />
+	  <None Remove="Resources\Images\f7.png" />
+	  <None Remove="Resources\Images\filter.png" />
+	  <None Remove="Resources\Images\journal_record.png" />
+	  <None Remove="Resources\Images\lb_box.png" />
+	  <None Remove="Resources\Images\profile.png" />
+	  <None Remove="Resources\Images\support.png" />
+	  <None Remove="Resources\Images\talk_us.png" />
+	  <None Remove="Resources\Images\welcome_user.png" />
+	  <None Remove="Resources\Images\icons8-edit-row-50-2.png" />
+	  <None Remove="Resources\Images\Screenshot 2023-03-05 at 9.44.38 PM.png" />
+	  <None Remove="Resources\Images\icons8-heart-with-pulse-50.png" />
+	  <None Remove="Resources\Images\mental-health-fill.svg" />
+	  <None Remove="Resources\Images\icons8-mental-health-64.png" />
+	  <None Remove="Resources\Images\icons8-man-running-48.png" />
+	  <None Remove="Resources\Images\icons8-sparkling-water-48.png" />
+	  <None Remove="Resources\Images\icons8-luggage-64.png" />
+	  <None Remove="Resources\Images\icons8-cutlery-32.png" />
+	  <None Remove="Resources\Images\icons8-dumbbell-16.png" />
+	  <None Remove="Resources\Images\icons8-translator-64.png" />
+	  <None Remove="Resources\Images\icons8-person-in-bed-48.png" />
+	  <None Remove="Resources\Images\icons8-open-book-48.png" />
+	  <None Remove="Resources\Images\icons8-dumbbell-64.png" />
+	  <None Remove="Resources\Images\icons8-hand-with-pen-48.png" />
+	  <None Remove="Resources\Images\icons8-edit-row-50-3.png" />
+	  <None Remove="Resources\Images\icons8-add-50.png" />
+	  <None Remove="Resources\Images\add.png" />
+	  <None Remove="Resources\Images\icons8-back-arrow-30.png" />
+	  <None Remove="Resources\Images\icons8-back-arrow-60.png" />
+	  <None Remove="Resources\Images\icons8-back-arrow-50.png" />
+	  <None Remove="Resources\Images\icons8-goal-50.png" />
+	  <None Remove="Resources\Images\f1_new.png" />
+	  <None Remove="Resources\Images\f2_new.png" />
+	  <None Remove="Resources\Images\f3_new.png" />
+	  <None Remove="Resources\Images\f4_new.png" />
+	  <None Remove="Resources\Images\f5_new.png" />
+	  <None Remove="Resources\Images\f6_new.png" />
+	  <None Remove="Resources\Images\f7_new.png" />
+	  <None Remove="Resources\Images\icons8-remove-60.png" />
+	  <None Remove="Resources\Images\mindsightsplash.png" />
+	  <None Remove="Resources\Images\mindsighticon.png" />
+	  <None Remove="Resources\Images\support1.png" />
+	  <None Remove="Resources\Images\support2.png" />
+	  <None Remove="Resources\Images\support3.png" />
+	  <None Remove="Resources\Raw\MindsightAudio.wav" />
+	  <None Remove="Resources\Images\audio.png" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Views\" />
+	  <Folder Include="Data\" />
+	</ItemGroup>
+</Project>

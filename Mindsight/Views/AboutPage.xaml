@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MindSight.AboutPage"
+             Title="AboutPage"
+             BackgroundColor="#D2DAE1"
+             Shell.NavBarIsVisible="False">
+
+  <!-- Defines a grid layout -->
+  <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+         RowSpacing="2"
+         ColumnDefinitions="50*"
+         Margin="10,10,10,10"
+         Padding="10,10">
+        <!--Setting Frame for About Page-->
+        <Frame Grid.Row="1" Margin="10,30,10,30" BorderColor="White" HorizontalOptions="Center" WidthRequest="350" HeightRequest="700" HasShadow="True" CornerRadius="15"  IsClippedToBounds="True">
+
+            <StackLayout>
+                <ImageButton Source="close_icon.png" HeightRequest="20" WidthRequest="20" HorizontalOptions="Start" Clicked="OnButtonBack" ></ImageButton>
+                <!--About Us Page Heading-->
+                <Label Text="About Us"
+               FontSize="18" 
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               Margin="0,20,0,0"
+               />
+                <Label/>
+                <!-- App Introduction image -->
+                <Image Source="mindsighticon.png" HeightRequest="130" VerticalOptions="Center" HorizontalOptions="Center" Opacity="1.0" Margin="0,0,0,20"/>
+                <!-- Layout Labels side-to-side-->
+                <HorizontalStackLayout><Label FontSize="14" 
+               FontAttributes="Italic, Bold"
+               HorizontalOptions="Start"
+               Margin="30,20,0,0" >Mindsight .</Label>
+               <Label FontSize="14" 
+               HorizontalOptions="Start"
+               Margin="10,20,0,0" > ( version 1.0 )</Label>
+                </HorizontalStackLayout>
+                <!--About Us Page content-->
+                <Label FontSize="14" 
+               HorizontalOptions="Start"
+               Margin="30,20,0,20" > A mental health app designed to help you improve your overall well-being. With features such as mood tracking, journaling, and articles that provide a better understanding on mental health, We aim to provide a safe and supportive environment for our users.</Label>
+                <Label FontSize="14" 
+               HorizontalOptions="Start"
+               Margin="30,0,0,20" > At Mindsight, we believe that taking care of your mental health is crucial, and our app is designed to help you achieve just that. Join us as we embark on this journey towards better mental health and well-being.</Label>
+               
+                <!-- Get Started Now button that bring users to Main Page -->
+                <Button Grid.Row="4" Margin="0, 10,0,0" WidthRequest="150" HeightRequest="50" Text="Get Started Now " TextColor="Black" FontAttributes="Bold" BackgroundColor="#FFDCE7" VerticalOptions="End" Clicked="OnButtonClick_Home" />
+
+            </StackLayout>
+
+        </Frame>
+    </Grid>
+</ContentPage>

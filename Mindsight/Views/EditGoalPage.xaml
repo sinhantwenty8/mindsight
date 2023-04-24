@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MindSight.EditGoalPage"
+             Title="EditGoalPage"
+             BackgroundColor="#DDEAF1"
+             Shell.NavBarIsVisible="False">
+
+    <VerticalStackLayout
+        Margin="20,20,20,10"
+        VerticalOptions="FillAndExpand">
+        <Frame CornerRadius="20"
+               BackgroundColor="White"
+               HeightRequest="710">
+
+            <ScrollView>
+                <VerticalStackLayout Margin="10,10,15,0">
+                    <ImageButton Source="close_icon.png"
+                            x:Name="btnCancel"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Center"
+                            HeightRequest="30"
+                            WidthRequest="20"
+                            Clicked="btnCancel_Clicked"/>
+                    <HorizontalStackLayout Margin="20,5,0,15">
+                        <Entry x:Name="entryTargetTitle" Placeholder="Edit Text" FontSize="30" FontAttributes="Bold" FontFamily="OpenSans" TextColor="#AA9D93" WidthRequest="200" MaxLength="30"></Entry>
+                        <ImageButton Source="remove_icon.png"
+                            x:Name="btnDelete"
+                            HorizontalOptions="End"
+                            VerticalOptions="Center"
+                            HeightRequest="35"
+                            WidthRequest="35"
+                            Margin="20,0,0,0"
+                            Clicked="deleteGoal_Clicked"/>
+                    </HorizontalStackLayout>
+
+                    <Frame CornerRadius="20" WidthRequest="300" BackgroundColor="#F8F3F3" Padding="10,10" BorderColor="Transparent">
+                        <Editor
+                            x:Name="editorTargetContent"
+                            HeightRequest="80"
+                            WidthRequest="250"
+                            Placeholder="Enter Text"
+                            AutoSize="TextChanges"
+                            CharacterSpacing="1"
+                            BackgroundColor="#F8F3F3"
+                            IsTextPredictionEnabled="false"
+                            FontAttributes="Bold"
+                            Margin="10,10,10,10"
+                            TextColor="#815E42"
+                            FontSize="15"
+                            />
+                    </Frame>
+
+                    <Label
+                        Text="Days of the week"
+                        HorizontalOptions="Start"
+                        FontAttributes="Bold"
+                        FontSize="15"
+                        FontFamily="OpenSans"
+                        TextColor="#AA9D93"
+                        Margin="10,20,0,0"/>
+                    <HorizontalStackLayout x:Name="checkboxStackLayout" Spacing="10" Margin="10,10,0,0">
+                        <VerticalStackLayout>
+                            <Label
+                                Text="Mon"
+                                VerticalOptions="Center" 
+                                HorizontalOptions="Center"
+                                FontAttributes="Bold"
+                                FontSize="13"
+                                FontFamily="OpenSans"
+                                TextColor="#CFCCC9"/>
+                            <CheckBox WidthRequest="30" HeightRequest="30" Color="#86B0F0"></CheckBox>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <Label
+                                Text="Tue"
+                                VerticalOptions="Center" 
+                                HorizontalOptions="Center"
+                                FontAttributes="Bold"
+                                FontSize="13"
+                                FontFamily="OpenSans"
+                                TextColor="#CFCCC9"/>
+                            <CheckBox WidthRequest="30" HeightRequest="30" Color="#86B0F0"></CheckBox>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <Label
+                                Text="Wed"
+                                VerticalOptions="Center" 
+                                HorizontalOptions="Center"
+                                FontAttributes="Bold"
+                                FontSize="13"
+                                FontFamily="OpenSans"
+                                TextColor="#CFCCC9"/>
+                            <CheckBox WidthRequest="30" HeightRequest="30" Color="#86B0F0"></CheckBox>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <Label
+                                Text="Thu"
+                                VerticalOptions="Center" 
+                                HorizontalOptions="Center"
+                                FontAttributes="Bold"
+                                FontSize="13"
+                                FontFamily="OpenSans"
+                                TextColor="#CFCCC9"/>
+                            <CheckBox WidthRequest="30" HeightRequest="30" Color="#86B0F0"></CheckBox>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <Label
+                                Text="Fri"
+                                VerticalOptions="Center" 
+                                HorizontalOptions="Center"
+                                FontAttributes="Bold"
+                                FontSize="13"
+                                FontFamily="OpenSans"
+                                TextColor="#CFCCC9"/>
+                            <CheckBox WidthRequest="30" HeightRequest="30" Color="#86B0F0"></CheckBox>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <Label
+                                Text="Sat"
+                                VerticalOptions="Center" 
+                                HorizontalOptions="Center"
+                                FontAttributes="Bold"
+                                FontSize="13"
+                                FontFamily="OpenSans"
+                                TextColor="#CFCCC9"/>
+                            <CheckBox WidthRequest="30" HeightRequest="30" Color="#86B0F0"></CheckBox>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <Label
+                                Text="Sun"
+                                VerticalOptions="Center" 
+                                HorizontalOptions="Center"
+                                FontAttributes="Bold"
+                                FontSize="13"
+                                FontFamily="OpenSans"
+                                TextColor="#CFCCC9"/>
+                            <CheckBox WidthRequest="30" HeightRequest="30" Color="#86B0F0"></CheckBox>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+
+                   <Label
+                        Text="Color Label"
+                        HorizontalOptions="Start"
+                        FontAttributes="Bold"
+                        FontSize="15"
+                        FontFamily="OpenSans"
+                        TextColor="#AA9D93"
+                        Margin="10,20,0,0"/>
+
+                    <HorizontalStackLayout Spacing="15" Margin="10,10,0,0" x:Name="colorStackLayout">
+                        <Button CornerRadius="80" WidthRequest="38" HeightRequest="38" BackgroundColor="#E7D2D0" BorderColor="Black" BorderWidth="0" Clicked="Button_Clicked"/>
+                        <Button CornerRadius="80" WidthRequest="38" HeightRequest="38" BackgroundColor="#E9C2C4" BorderColor="Black" BorderWidth="0" Clicked="Button_Clicked"/>
+                        <Button CornerRadius="80" WidthRequest="38" HeightRequest="38" BackgroundColor="#E2CAC0" BorderColor="Black" BorderWidth="0" Clicked="Button_Clicked"/>
+                        <Button CornerRadius="80" WidthRequest="38" HeightRequest="38" BackgroundColor="#9BADBF" BorderColor="Black" BorderWidth="0" Clicked="Button_Clicked"/>
+                        <Button CornerRadius="80" WidthRequest="38" HeightRequest="38" BackgroundColor="#3D5284" BorderColor="Black" BorderWidth="0" Clicked="Button_Clicked"/>
+                    </HorizontalStackLayout>
+
+                    <Label
+                        x:Name="lblIcons"
+                        Text="Icons"
+                        HorizontalOptions="Start"
+                        FontAttributes="Bold"
+                        FontSize="15"
+                        FontFamily="OpenSans"
+                        TextColor="#AA9D93"
+                        Margin="10,20,0,0"/>
+
+                    <Grid Margin="0,10,0,0" x:Name="iconGrid">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Frame Margin="0,5" Grid.Row="0" Grid.Column="0" CornerRadius="80" BackgroundColor="Transparent" BorderColor="Black" WidthRequest="38" HeightRequest="38">
+                            <ImageButton Source="icon_1.png" HeightRequest="28" WidthRequest="28" BackgroundColor="Transparent" BorderWidth="0" Clicked="ImageButton_Clicked" HorizontalOptions="Center"/>
+                        </Frame>
+                        <Frame Margin="0,5" Grid.Row="0" Grid.Column="1" CornerRadius="80" BackgroundColor="Transparent" BorderColor="Black" WidthRequest="38" HeightRequest="38">
+                            <ImageButton Source="icon_2.png" HeightRequest="28" WidthRequest="28" BackgroundColor="Transparent" BorderWidth="0" Clicked="ImageButton_Clicked" HorizontalOptions="Center"/>
+                        </Frame>
+                        <Frame Margin="0,5" Grid.Row="0" Grid.Column="2" CornerRadius="80" BackgroundColor="Transparent" BorderColor="Black" WidthRequest="38" HeightRequest="38">
+                            <ImageButton Source="icon_3.png" HeightRequest="28" WidthRequest="28" BackgroundColor="Transparent" BorderWidth="0" Clicked="ImageButton_Clicked" HorizontalOptions="Center"/>
+                        </Frame>
+                        <Frame Margin="0,5" Grid.Row="0" Grid.Column="3" CornerRadius="80" BackgroundColor="Transparent" BorderColor="Black" WidthRequest="38" HeightRequest="38">
+                            <ImageButton Source="icon_4.png" HeightRequest="28" WidthRequest="28" BackgroundColor="Transparent" BorderWidth="0" Clicked="ImageButton_Clicked" HorizontalOptions="Center"/>
+                        </Frame>
+                        <Frame Margin="0,5" Grid.Row="0" Grid.Column="4" CornerRadius="80" BackgroundColor="Transparent" BorderColor="Black" WidthRequest="38" HeightRequest="38">
+                            <ImageButton Source="icon_5.png" HeightRequest="28" WidthRequest="28" BackgroundColor="Transparent" BorderWidth="0" Clicked="ImageButton_Clicked" HorizontalOptions="Center"/>
+                        </Frame>
+                        <Frame Margin="0,5" Grid.Row="1" Grid.Column="0" CornerRadius="80" BackgroundColor="Transparent" BorderColor="Black" WidthRequest="38" HeightRequest="38">
+                            <ImageButton Source="icon_6.png" HeightRequest="28" WidthRequest="28" BackgroundColor="Transparent" BorderWidth="0" Clicked="ImageButton_Clicked" HorizontalOptions="Center"/>
+                        </Frame>
+                        <Frame Margin="0,5" Grid.Row="1" Grid.Column="1" CornerRadius="80" BackgroundColor="Transparent" BorderColor="Black" WidthRequest="38" HeightRequest="38">
+                            <ImageButton Source="icon_7.png" HeightRequest="28" WidthRequest="28" BackgroundColor="Transparent" BorderWidth="0" Clicked="ImageButton_Clicked" HorizontalOptions="Center"/>
+                        </Frame>
+                        <Frame Margin="0,5" Grid.Row="1" Grid.Column="2" CornerRadius="80" BackgroundColor="Transparent" BorderColor="Black" WidthRequest="38" HeightRequest="38">
+                            <ImageButton Source="icon_8.png" HeightRequest="28" WidthRequest="28" BackgroundColor="Transparent" BorderWidth="0" Clicked="ImageButton_Clicked" HorizontalOptions="Center"/>
+                        </Frame>
+                        <Frame Margin="0,5" Grid.Row="1" Grid.Column="3" CornerRadius="80" BackgroundColor="Transparent" BorderColor="Black" WidthRequest="38" HeightRequest="38">
+                            <ImageButton Source="icon_9.png" HeightRequest="28" WidthRequest="28" BackgroundColor="Transparent" BorderWidth="0" Clicked="ImageButton_Clicked" HorizontalOptions="Center"/>
+                        </Frame>
+                        <Frame Margin="0,5" Grid.Row="1" Grid.Column="4" CornerRadius="80" BackgroundColor="Transparent" BorderColor="Black" WidthRequest="38" HeightRequest="38">
+                            <ImageButton Source="icon_10.png" HeightRequest="28" WidthRequest="28" BackgroundColor="Transparent" BorderWidth="0" Clicked="ImageButton_Clicked" HorizontalOptions="Center"/>
+                        </Frame>
+                 </Grid>
+                <Button Text="Save" 
+                        BorderColor="Brown"
+                        BorderWidth="1"
+                        x:Name="btnSave"
+                        Padding="0,0"
+                        Margin="0,20,10,10"
+                        TextColor="Black"
+                        BackgroundColor="#FFF3F1"
+                        WidthRequest="80"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Start" 
+                        FontSize="17"
+                        FontAttributes="Bold"
+                        FontFamily="Open-Sans"
+                        Clicked="btnSave_Clicked"></Button>
+                <Label
+                        x:Name="lblDaysAccumulated"
+                        Text=""
+                        HorizontalOptions="End"
+                        FontAttributes="Bold"
+                        FontSize="11"
+                        FontFamily="OpenSans"
+                        TextColor="#7B7C7E"
+                        Margin="0,5,0,0"/>
+                </VerticalStackLayout>
+            </ScrollView>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>

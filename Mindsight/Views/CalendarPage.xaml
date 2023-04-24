@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MindSight.CalendarPage"
+             xmlns:calendar="clr-namespace:Syncfusion.Maui.Calendar;assembly=Syncfusion.Maui.Calendar"
+             BackgroundColor="#DDEAF1"
+             Shell.NavBarIsVisible="False">
+    <VerticalStackLayout>
+        <ImageButton Source="close_icon.png"
+                    x:Name="btnBack"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    HeightRequest="30"
+                    WidthRequest="20"
+                    Clicked="btnBack_Clicked"
+                    Margin="20,30,20,20"/>
+        <Label 
+            Text="Calendar"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontSize="24"
+            FontAttributes="Bold"
+            FontFamily="Open-Sans"/>
+
+        <Frame
+            Margin="20,40,20,20">
+            <VerticalStackLayout>
+                <!--Displaying the Calendar-->
+                <calendar:SfCalendar  x:Name="Calendar" 
+                        View="Month"
+                        Margin="10,10">
+                </calendar:SfCalendar>
+                <Label Text="Selected Date : "
+                       x:Name="lblCalendar"
+                       HorizontalTextAlignment="Center"
+                       FontAttributes="Bold"
+                       FontSize="16"
+                       Margin="0,20,0,10"/>
+            </VerticalStackLayout>
+        </Frame>
+        <Button x:Name="btnGoToJournal"
+                WidthRequest="100"
+                Text="Edit"
+                BorderColor="Brown"
+                BorderWidth="1"
+                BackgroundColor="#FFF3F1"
+                TextColor="Black"
+                Clicked="btnGoToJournal_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,66 @@
+﻿<Properties StartupConfiguration="{9BF7EE3D-483B-411C-A1C9-3C4457D733A1}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Model/Bookmarked.cs">
+    <Files>
+      <File FileName="Views/ArticleDetailedPage.xaml.cs" Line="47" Column="1" />
+      <File FileName="Views/InsightsPage.xaml" Line="6" Column="43" />
+      <File FileName="Views/InsightsPage.xaml.cs" Line="66" Column="10" />
+      <File FileName="Views/ArticleDetailedPage.xaml" />
+      <File FileName="Views/JournalPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="Views/JournalPage.xaml" />
+      <File FileName="MauiProgram.cs" />
+      <File FileName="Views/CalendarPage.xaml" Line="1" Column="1" />
+      <File FileName="Views/CalendarPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="AppShell.xaml" />
+      <File FileName="AppShell.xaml.cs" />
+      <File FileName="Data/ArticlesData.cs" Line="15" Column="35" />
+      <File FileName="FileAccessHelper.cs" />
+      <File FileName="App.xaml" />
+      <File FileName="App.xaml.cs" />
+      <File FileName="MainPage.xaml" />
+      <File FileName="Data/DiaryRepository.cs" Line="17" Column="6" />
+      <File FileName="Model/Diary.cs" Line="6" Column="1" />
+      <File FileName="Model/Article.cs" Line="9" Column="46" />
+      <File FileName="Views/FilterPage.xaml" Line="36" Column="42" />
+      <File FileName="MainPage.xaml.cs" />
+      <File FileName="Views/FilterPage.xaml.cs" Line="28" Column="6" />
+      <File FileName="Data/CategoriesData.cs" Line="1" Column="1" />
+      <File FileName="Model/Category.cs" Line="1" Column="1" />
+      <File FileName="Model/Bookmarked.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Mindsight" expanded="True">
+            <Node name="Mindsight" expanded="True">
+              <Node name="Data" expanded="True" />
+              <Node name="Model" expanded="True">
+                <Node name="Category.cs" selected="True" />
+              </Node>
+              <Node name="Platforms" expanded="True" />
+              <Node name="Resources" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="ArticleDetailedPage.xaml" expanded="True" />
+                <Node name="CalendarPage.xaml" expanded="True" />
+                <Node name="FilterPage.xaml" expanded="True" />
+                <Node name="InsightsPage.xaml" expanded="True" />
+                <Node name="JournalPage.xaml" expanded="True" />
+              </Node>
+              <Node name="App.xaml" expanded="True" />
+              <Node name="AppShell.xaml" expanded="True" />
+              <Node name="MainPage.xaml" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Mindsight PreferredExecutionTarget="Android.pixel_5_-_api_33" />
+  <MonoDevelop.MonoDroid LastDeploySdkVersion="13.2.0.0" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.pixel_5_-_api_33" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

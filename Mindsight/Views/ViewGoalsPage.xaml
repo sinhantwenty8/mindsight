@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MindSight"
+             x:Class="MindSight.ViewGoalsPage"
+             Title="ViewGoalsPage"
+             BackgroundColor="#DDEAF1"
+             Shell.NavBarIsVisible="False">
+
+    <ContentPage.Resources>
+        <local:ColorConverter x:Key="ColorConverter" />
+    </ContentPage.Resources>
+
+    <VerticalStackLayout>
+        <HorizontalStackLayout Margin="30">
+            <Frame Margin="0,10,20,0" Grid.Row="0" Grid.Column="2" CornerRadius="80" BackgroundColor="Transparent" WidthRequest="35" HeightRequest="35" BorderColor="Transparent">
+                <ImageButton Source="back_icon.png"
+                    x:Name="btnBack"
+                    BackgroundColor="White"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    HeightRequest="55"
+                    WidthRequest="55"
+                    Clicked="btnBack_Clicked"/>
+            </Frame>
+
+            <Label
+            Margin="0,10,20,0"
+            Text="Your Goals"
+            VerticalOptions="Center" 
+            HorizontalOptions="Start"
+            FontSize="25"
+            FontFamily="Open-Sans"
+            FontAttributes="Bold"/>
+
+        </HorizontalStackLayout>
+
+    <ScrollView HeightRequest="600" WidthRequest="320">
+        <VerticalStackLayout>
+        <CollectionView x:Name="goalCollectionView">
+        <CollectionView.ItemsLayout>
+            <GridItemsLayout Orientation="Vertical" Span="2" />
+        </CollectionView.ItemsLayout>
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Frame Padding="10" CornerRadius="15" BackgroundColor="{Binding Color, Converter={StaticResource ColorConverter}}" IsClippedToBounds="True" WidthRequest="123" HeightRequest="124" Margin="10">
+                    <VerticalStackLayout BindingContext="{Binding .}" Margin="5,0">
+                        <VerticalStackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnSectionTapped"/>
+                        </VerticalStackLayout.GestureRecognizers>
+                            <Image Source="{Binding IconImage}" Margin="0,18,0,5" WidthRequest="23" HeightRequest="23" HorizontalOptions="Start"/>
+                            <Label Text="{Binding TargetTitle}" FontSize="20" FontFamily="Open-Sans" FontAttributes="Bold" TextColor="White" VerticalOptions="CenterAndExpand"/>
+                            <Label Text="{Binding TargetContent}" VerticalOptions="CenterAndExpand" TextColor="#FAF6F6" FontSize="13" FontFamily="Open-Sans"/>
+                        </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+
+    </ScrollView>
+    </VerticalStackLayout>
+
+</ContentPage>

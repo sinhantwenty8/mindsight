@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MindSight.Profile"
+             Title="Profile"
+             BackgroundColor="AliceBlue"
+             Shell.NavBarIsVisible="False">
+
+  <!-- A grid layout with 10 rows and one column, with some spacing and margins. -->
+  <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+         RowSpacing="2"
+         ColumnDefinitions="50*"
+         Margin="10,20,10,10"
+         Padding="10,10">
+
+        <!-- A stack layout for the header section, containing a close button and a label. -->
+        <StackLayout>
+            <!-- An image button for closing the profile page. -->
+            <ImageButton Source="close_icon.png" Margin="10,0,0,10" HeightRequest="20" WidthRequest="20" HorizontalOptions="Start" Clicked="OnButtonBack" ></ImageButton>
+            <!-- A label for the header text. -->
+            <Label Text="Profile"
+                           FontSize="20" 
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"/>
+        </StackLayout>
+
+            <!-- A frame for the app intro banner. -->
+            <Frame Grid.Row="1" Margin="0, 40,0,0" BorderColor="White" HorizontalOptions="Center" WidthRequest="350" HeightRequest="160" HasShadow="True" CornerRadius="15" Padding="0" IsClippedToBounds="True">
+                <!-- A horizontal stack layout for the image and labels side-by-side in the frame. -->
+                <HorizontalStackLayout HorizontalOptions="Start" MinimumWidthRequest="450">
+                    <!-- An image for the user's profile picture. -->
+                    <Image Source="profile.png" HeightRequest="80" Margin="30,0,0,0" VerticalOptions="Center" HorizontalOptions="Center" Opacity="1.0"/>
+                    <!-- A vertical stack layout for the labels. -->
+                    <VerticalStackLayout Margin="0,0,0,0"  HorizontalOptions="Start" VerticalOptions="Center">
+                        <!-- Labels for the welcome message and tagline. -->
+                        <Label Text="Welcome to Mindsight!"
+                           FontSize="18"
+                           FontAttributes="Bold"/>
+                           <Label Text="- Your inner glow start with the mind -" FontSize="11" Opacity="80" Background=" white" TextColor="DarkGrey" HorizontalOptions="Start" />
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+
+            </Frame>
+                    <!-- Button for navigation to About Us Page. -->
+                    <Button Grid.Row="2" Margin="0, 50,0,0" Grid.ColumnSpan="2" WidthRequest="330" HeightRequest="50" Text="About Us" TextColor="Black" FontAttributes="Bold" BackgroundColor="#FFDCE7" Clicked="OnButtonClick_About"/>
+                    <!-- Button for navigation to Support Page. -->
+                    <Button Grid.Row="3" Margin="0, 20,0,0" Grid.ColumnSpan="2" WidthRequest="330" HeightRequest="50" Text="Support Hotline" TextColor="Black" FontAttributes="Bold" BackgroundColor="#FFDCE7" Clicked="OnButtonClick_Support" />
+                    <!-- Button for navigation to FAQ Page. -->
+                    <Button Grid.Row="4" Margin="0, 20,0,0" Grid.ColumnSpan="2" WidthRequest="330" HeightRequest="50" Text="FAQ " TextColor="Black" FontAttributes="Bold" BackgroundColor="#FFDCE7" Clicked="OnButtonClick_FAQ" />
+
+   </Grid>
+</ContentPage>

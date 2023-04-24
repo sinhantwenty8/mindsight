@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:MindSight"
+             x:Class="MindSight.MainGoalPage"
+             Title="MainGoalPage"
+             BackgroundColor="#DDEAF1"
+             Shell.NavBarIsVisible="False">
+
+    <ContentPage.Resources>
+        <local:ColorConverter x:Key="ColorConverter" />
+    </ContentPage.Resources>
+
+    <VerticalStackLayout Margin="30">
+        <ScrollView>
+            <VerticalStackLayout>
+                <HorizontalStackLayout>
+                    <VerticalStackLayout WidthRequest="250">
+                        <Label 
+                            Text="Set"
+                            VerticalOptions="Center" 
+                            HorizontalOptions="Start"
+                            FontSize="25"
+                            FontFamily="Open-Sans"
+                            FontAttributes="Bold"/>
+                        <Label 
+                            Text="Your Goals."
+                            VerticalOptions="Center" 
+                            HorizontalOptions="Start"
+                            FontSize="25"
+                            FontFamily="Open-Sans"
+                            FontAttributes="Bold"/>
+                
+                    </VerticalStackLayout>
+                        <Frame Margin="0,5" Grid.Row="0" Grid.Column="2" CornerRadius="80" BackgroundColor="Transparent" WidthRequest="45" HeightRequest="45" BorderColor="Transparent">
+                            <ImageButton Source="add_icon.png"
+                                x:Name="btnAdd"
+                                BackgroundColor="White"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                HeightRequest="60"
+                                WidthRequest="60"
+                                Clicked="btnAdd_Clicked"/>
+                        </Frame>
+                </HorizontalStackLayout>
+
+                <CollectionView x:Name="goalCollectionView">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Horizontal"/>
+                        </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <ScrollView WidthRequest="140">
+                                        <HorizontalStackLayout WidthRequest="300" HorizontalOptions="Start">
+                                            <Frame Padding="10" CornerRadius="15" BackgroundColor="{Binding Color, Converter={StaticResource ColorConverter}}" IsClippedToBounds="True" WidthRequest="123" HeightRequest="124" Margin="0,30,10,10">
+                                                <VerticalStackLayout BindingContext="{Binding .}">
+                                                    <VerticalStackLayout.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="OnSectionTapped"/>
+                                                    </VerticalStackLayout.GestureRecognizers>
+                                                    <Image Source="{Binding IconImage}" Margin="0,15,0,5" WidthRequest="23" HeightRequest="23" HorizontalOptions="Start"/>
+                                                    <Label Text="{Binding TargetTitle}" FontSize="18" FontFamily="Open-Sans" FontAttributes="Bold" TextColor="White" VerticalOptions="CenterAndExpand"/>
+                                                    <Label Text="{Binding TargetContent}" VerticalOptions="CenterAndExpand" TextColor="#FAF6F6" FontSize="12" FontFamily="Open-Sans"/>
+                                                </VerticalStackLayout>
+                                            </Frame>
+                                        </HorizontalStackLayout>
+                                    </ScrollView>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+
+                <Button
+                    x:Name="btnViewAllGoals"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="Center"
+                    Text="View All Goals"
+                    TextColor="#8A8A8A"
+                    FontFamily="Open-Sans"
+                    Clicked="btnViewAllGoals_Clicked"/>
+
+                <Label
+                    x:Name="lblTask"
+                    Text="Your Tasks • Today"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Start"
+                    FontSize="25"
+                    FontFamily="Open-Sans"
+                    FontAttributes="Bold"
+                    Margin="0,0,0,30"/>
+                <Frame Padding="10" Margin="0" CornerRadius="20" WidthRequest="320" BackgroundColor="#FDF5F3">
+                    <VerticalStackLayout>
+                        <ScrollView Margin="20,20,20,0" WidthRequest="320" HeightRequest="270" Padding="10,20,10,10">
+                            <CollectionView x:Name="taskCollectionView">
+                                <CollectionView.ItemsLayout>
+                                    <LinearItemsLayout Orientation="Vertical"/>
+                                </CollectionView.ItemsLayout>
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate>
+                                            <VerticalStackLayout>
+                                                <HorizontalStackLayout Margin="20,10" x:Name="taskHorizontalStack">
+                                                    <VerticalStackLayout HorizontalOptions="Start" WidthRequest="220">
+                                                        <Label Text="{Binding TargetTitle}" FontSize="18" FontFamily="Open-Sans" FontAttributes="Bold" TextColor="#3D5284" VerticalOptions="CenterAndExpand"/>
+                                                        <Label Text="{Binding TargetContent}" VerticalOptions="CenterAndExpand" TextColor="#3D5284" FontSize="12" FontFamily="Open-Sans"/>
+                                                    </VerticalStackLayout>
+                                                    <CheckBox IsChecked="{Binding TodayIsChecked}" Color="#86B0F0" x:Name="{Binding Id}" WidthRequest="35" HeightRequest="35" HorizontalOptions="End" CheckedChanged="CheckBox_CheckedChanged"></CheckBox>
+                                                </HorizontalStackLayout>
+                                                <BoxView Margin="20,5" BackgroundColor="#3D5284" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+                                            </VerticalStackLayout>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </ScrollView>
+                        <Label x:Name="lblGoalAchieved" Padding="10" HorizontalOptions="End" Text="1/5 Goal(s) Achieved"></Label>
+                    </VerticalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+        </ScrollView>
+    </VerticalStackLayout>
+</ContentPage>

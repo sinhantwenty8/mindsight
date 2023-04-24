@@ -1,0 +1,75 @@
+﻿<Properties StartupConfiguration="{5795179B-AD43-4179-9CD9-1F93612C915B}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.MonoDroid LastDeploySdkVersion="13.2.0.0" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.MindSight PreferredExecutionTarget="Android.pixel_5_-_api_33_3" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Mindsight/MainPage.xaml">
+    <Files>
+      <File FileName="MindSight/MainPage.xaml.cs" Line="72" Column="87" />
+      <File FileName="MindSight/MainPage.xaml" Line="164" Column="52" />
+      <File FileName="Mindsight/App.xaml" />
+      <File FileName="Mindsight/AppShell.xaml" />
+      <File FileName="Mindsight/MauiProgram.cs" />
+      <File FileName="Mindsight/AppShell.xaml.cs" />
+      <File FileName="Mindsight/App.xaml.cs" />
+      <File FileName="Mindsight/Resources/Styles/Styles.xaml" />
+      <File FileName="Mindsight/Resources/Styles/Colors.xaml" />
+      <File FileName="Mindsight/FileAccessHelper.cs" />
+      <File FileName="Mindsight/Views/JournalPage.xaml.cs" />
+      <File FileName="Mindsight/Views/CalendarPage.xaml" />
+      <File FileName="Mindsight/Views/CalendarPage.xaml.cs" />
+      <File FileName="Mindsight/Views/FilterPage.xaml" />
+      <File FileName="Mindsight/Views/InsightsPage.xaml.cs" Line="179" Column="39" />
+      <File FileName="Mindsight/Views/InsightsPage.xaml" />
+      <File FileName="Mindsight/Views/FilterPage.xaml.cs" />
+      <File FileName="Mindsight/Views/JournalPage.xaml" />
+      <File FileName="Mindsight/Views/MainGoalPage.xaml" Line="1" Column="1" />
+      <File FileName="Mindsight/Views/EditGoalPage.xaml" />
+      <File FileName="Mindsight/Views/MainGoalPage.xaml.cs" />
+      <File FileName="Mindsight/Views/EditGoalPage.xaml.cs" />
+      <File FileName="Mindsight/Data/GoalRepository.cs" />
+      <File FileName="Mindsight/Model/Goal.cs" />
+      <File FileName="Mindsight/ColorConverter.cs" />
+      <File FileName="Mindsight/Views/ArticleDetailedPage.xaml" />
+      <File FileName="Mindsight/Views/ArticleDetailedPage.xaml.cs" />
+      <File FileName="Mindsight/Views/ViewGoalsPage.xaml" />
+      <File FileName="Mindsight/Data/DiaryRepository.cs" />
+      <File FileName="Mindsight/Model/Diary.cs" />
+      <File FileName="Mindsight/Views/ViewGoalsPage.xaml.cs" />
+      <File FileName="Mindsight/Data/CategoriesData.cs" />
+      <File FileName="Mindsight/Model/Article.cs" />
+      <File FileName="Mindsight/Model/Affirmation.cs" />
+      <File FileName="Mindsight/Model/Category.cs" />
+      <File FileName="Mindsight/MindSight.csproj" />
+      <File FileName="Mindsight/AboutPage.xaml" />
+      <File FileName="Mindsight/FAQ.xaml" />
+      <File FileName="Mindsight/Platforms/Android/AndroidManifest.xml" />
+      <File FileName="Mindsight/Profile.xaml" Line="1" Column="1" />
+      <File FileName="Mindsight/Profile.xaml.cs" Line="37" Column="43" />
+      <File FileName="Mindsight/AboutPage.xaml.cs" />
+      <File FileName="Mindsight/SupportPage.xaml" />
+      <File FileName="Mindsight/SupportPage.xaml.cs" />
+      <File FileName="Mindsight/FAQ.xaml.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MindSight" expanded="True">
+            <Node name="MindSight" expanded="True">
+              <Node name="Data" expanded="True" />
+              <Node name="Model" expanded="True" />
+              <Node name="Resources" expanded="True" />
+              <Node name="Views" expanded="True" />
+              <Node name="MainPage.xaml" expanded="True" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.pixel_5_-_api_33_3" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>

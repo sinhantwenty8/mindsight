@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MindSight.InsightsPage"
+             BackgroundColor="#DDEAF1"
+             Shell.NavBarIsVisible="False">
+
+        <ScrollView>
+            <VerticalStackLayout 
+                Spacing="10" 
+                Padding="30,30,30,20" 
+                VerticalOptions="Start">
+
+                <HorizontalStackLayout
+                    HorizontalOptions="End">
+                    <VerticalStackLayout
+                        HorizontalOptions="Center">
+                        <ImageButton
+                            x:Name="btnBookmark"
+                            BackgroundColor="Transparent"
+                            Source="bookmark_outline.png"
+                            HeightRequest="25"
+                            WidthRequest="25"
+                            HorizontalOptions="Center"
+                            Clicked="btnBookmark_Clicked"/>
+                        <Label 
+                            Text="Bookmark"
+                            SemanticProperties.HeadingLevel="Level1"
+                            FontSize="10"
+                            FontAttributes="Bold"
+                            HorizontalTextAlignment="Center"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout
+                        HorizontalOptions="Center"
+                        Margin="15,0,0,0">
+                        <ImageButton
+                            Source="search_icon.png"
+                            HeightRequest="25"
+                            WidthRequest="25"
+                            HorizontalOptions="Center"
+                            Clicked="SearchButton_Clicked"/>
+                        
+                        <Label 
+                            Text="Search"
+                            SemanticProperties.HeadingLevel="Level1"
+                            FontSize="10"
+                            FontAttributes="Bold"
+                            HorizontalTextAlignment="Center"/>
+
+                    </VerticalStackLayout>
+             
+                </HorizontalStackLayout>
+                
+                <Label
+                x:Name="lblSelfCare"
+                    Margin="0,10,0,10"
+                    Text="Self-care Tips and Tricks"
+                    SemanticProperties.HeadingLevel="Level1"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Start" />
+
+                <CollectionView x:Name="articleListSelfCare">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" />
+                </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <ScrollView WidthRequest="110" HorizontalScrollBarVisibility="Always">
+                                <HorizontalStackLayout WidthRequest="300">
+                                    <ImageButton Source="{Binding Image}"
+                                        x:Name="{Binding ArticleID}"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        HeightRequest="120"
+                                        WidthRequest="102"
+                                        Margin="0,0,10,0"
+                                        CornerRadius="20"
+                                        Clicked="article_Clicked"
+                                      >
+                                    </ImageButton>
+                                </HorizontalStackLayout>
+                            </ScrollView>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <Label
+                    Margin="0,10,0,10"
+                    Text="Psychology Behind Emotions"
+                    SemanticProperties.HeadingLevel="Level1"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Start" />
+
+                <CollectionView x:Name="articleListPsychology">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal" />
+                    </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <ScrollView WidthRequest="110" HorizontalScrollBarVisibility="Always">
+                                    <HorizontalStackLayout WidthRequest="300">
+                                        <ImageButton Source="{Binding Image}"
+                                            x:Name="{Binding ArticleID}"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            HeightRequest="120"
+                                            WidthRequest="102"
+                                            Margin="0,0,10,0"
+                                            CornerRadius="20"
+                                            Clicked="article_Clicked"
+                                          >
+                                        </ImageButton>
+                                    </HorizontalStackLayout>
+                                </ScrollView>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                <Label
+                    Margin="0,10,0,10"
+                    Text="Let's Talk Mental Health"
+                    SemanticProperties.HeadingLevel="Level1"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Start" />
+
+                <CollectionView x:Name="articleListMental">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal" />
+                    </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <ScrollView WidthRequest="110" HorizontalScrollBarVisibility="Always">
+                                    <HorizontalStackLayout WidthRequest="300">
+                                        <ImageButton Source="{Binding Image}"
+                                            x:Name="{Binding ArticleID}"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            HeightRequest="120"
+                                            WidthRequest="102"
+                                            Margin="0,0,10,0"
+                                            CornerRadius="20"
+                                            Clicked="article_Clicked"
+                                          >
+                                        </ImageButton>
+                                    </HorizontalStackLayout>
+                                </ScrollView>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                <Label
+                    Margin="0,10,0,10"
+                    Text="Book Recommendations"
+                    SemanticProperties.HeadingLevel="Level1"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Start" />
+
+                <CollectionView x:Name="articleListBookRecommend">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal" />
+                    </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <ScrollView WidthRequest="110" HorizontalScrollBarVisibility="Always">
+                                    <HorizontalStackLayout WidthRequest="300">
+                                        <ImageButton Source="{Binding Image}"
+                                            x:Name="{Binding ArticleID}"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            HeightRequest="120"
+                                            WidthRequest="102"
+                                            Margin="0,0,10,0"
+                                            CornerRadius="20"
+                                            Clicked="article_Clicked"
+                                          >
+                                        </ImageButton>
+                                    </HorizontalStackLayout>
+                                </ScrollView>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+            </VerticalStackLayout>
+
+        </ScrollView>
+</ContentPage>
